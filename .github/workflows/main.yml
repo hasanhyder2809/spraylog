@@ -1,0 +1,36 @@
+name: Deploy SprayLog Frontend
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get SprayLog code
+        uses: actions/checkout@v4
+
+      - name: Prepare website
+        run: |
+          mkdir site
+          cp -r frontend/* site/
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - name: Publish website
+        uses: actions/deploy-pages@v4
