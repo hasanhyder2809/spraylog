@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1d5c36">
+  <title>SprayLog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Sidebar (desktop) -->
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-mark">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21c0-9 6-15 15-16-1 9-7 15-15 16Zm0 0 7-7" /></svg>
+        </span>
+        <span class="brand-name">SprayLog</span>
+      </div>
+      <nav class="side-nav" aria-label="Main">
+        <a href="#/dashboard" data-nav="dashboard"><span class="ico" data-icon="home"></span>Dashboard</a>
+        <a href="#/fields" data-nav="fields"><span class="ico" data-icon="fields"></span>My Fields</a>
+        <a href="#/history" data-nav="history"><span class="ico" data-icon="history"></span>Spray History</a>
+        <a href="#/references" data-nav="references"><span class="ico" data-icon="book"></span>Reference Data</a>
+      </nav>
+      <a href="#/log" class="btn btn-primary btn-block side-cta"><span class="ico" data-icon="plus"></span>Log Spray</a>
+      <p class="side-foot">A digital spray diary.<br>Records what you applied. Does not recommend products.</p>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main">
+      <div id="mode-banner" class="mode-banner" hidden></div>
+      <div id="view" class="view" aria-live="polite"></div>
+    </main>
+
+    <!-- Bottom navigation (mobile) -->
+    <nav class="bottom-nav" aria-label="Main">
+      <a href="#/dashboard" data-nav="dashboard"><span class="ico" data-icon="home"></span><span>Home</span></a>
+      <a href="#/fields" data-nav="fields"><span class="ico" data-icon="fields"></span><span>Fields</span></a>
+      <a href="#/log" data-nav="log" class="nav-fab" aria-label="Log Spray"><span class="ico" data-icon="plus"></span><span>Log Spray</span></a>
+      <a href="#/history" data-nav="history"><span class="ico" data-icon="history"></span><span>History</span></a>
+      <a href="#/references" data-nav="references"><span class="ico" data-icon="book"></span><span>Reference</span></a>
+    </nav>
+  </div>
+
+  <div id="toast" class="toast" role="status" hidden></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
